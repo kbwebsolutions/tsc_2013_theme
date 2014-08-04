@@ -175,9 +175,88 @@ class theme_tsc_2013_core_renderer extends core_renderer {
 
 public function settings_tree(settings_navigation $navigation) {
        
-        $content = $this->navigation_node($navigation, array('class'=>'nav navbar-nav'));
+        $content = $this->new_navigation_node($navigation, array('class'=>'nav navbar-nav'));
         return $content;
     }
+
+
+ protected function new_navigation_node(navigation_node $node, $attrs=array('class'=>'dropdown-menu')) {
+        global $CFG, $PAGE;
+        $items = $node->children;
+
+        // exit if empty, we don't want an empty ul element
+        if ($items->count()==0) {
+            return '';
+        }
+
+        // array of nested li elements
+        $lis = array();
+        foreach ($items as $item) {
+            if (!$item->display) {
+                continue;
+            }
+
+			$isbranch = ($item->children->count()>0  || $item->nodetype==navigation_node::NODETYPE_BRANCH);
+            $hasicon = (!$isbranch && $item->icon instanceof renderable);
+
+            if ($isbranch) {
+                $item->hideicon = true;
+            }
+            
+            //$content = '';
+            $content = $this->render($item);
+
+            // this applies to the li item which contains all child lists too
+            $liclasses = array($item->get_css_type());
+            $liexpandable = array();
+            if (!$item->forceopen || (!$item->forceopen && $item->collapse) || ($item->children->count()==0  && $item->nodetype==navigation_node::NODETYPE_BRANCH)) {
+                //$liclasses[] = 'collapsed ';
+            }
+            if ($isbranch) {
+                $liclasses[] = 'dropdown';
+                //$liclasses[] = 'dropdown contains_branch';
+                
+                $liexpandable = array('aria-expanded' => in_array('collapsed', $liclasses) ? "false" : "true");
+            } else if ($hasicon) {
+                $liclasses[] = 'item_with_icon';
+            }
+            
+            $liattr = array('class' => join(' ',$liclasses)) + $liexpandable;
+            // class attribute on the div item which only contains the item content
+            $divclasses = array();
+            $datatoggle = array();
+            if ($isbranch) {
+                $divclasses[] = 'dropdown-toggle';
+                $datatoggle[] = 'dropdown';
+                
+            } else {
+                $divclasses[] = 'leaf';
+            }
+            if (!empty($item->classes) && count($item->classes)>0) {
+                $divclasses[] = join(' ', $item->classes);
+            }
+           if(!empty($datatoggle)) {
+            	$divattr = array('class'=>join(' ', $divclasses), 'data-toggle'=>join(' ', $datatoggle));
+            } else {
+	            $divattr = array('class'=>join(' ', $divclasses));
+            }
+            if (!empty($item->id)) {
+                $divattr['id'] = $item->id;
+            }
+            
+           $content = html_writer::tag('a', $content, $divattr) . $this->navigation_node($item);
+            
+            $content = html_writer::tag('li', $content, $liattr);
+            $lis[] = $content;
+        }
+
+        if (count($lis)) {
+            return html_writer::tag('ul', implode("\n", $lis), $attrs);
+        } else {
+            return '';
+        }
+    }
+
 
  protected function navigation_node(navigation_node $node, $attrs=array('class'=>'dropdown-menu')) {
         global $CFG, $PAGE;
@@ -270,8 +349,7 @@ public function settings_tree(settings_navigation $navigation) {
 		
 		$bob = new stdClass();
         $bob = $this->settings_tree($this->page->settingsnav);
-        //var_dump($bob);
-		$content ='';
+        $content ='';
 		//$content ='<div>';
 		$content .= $bob;
         
