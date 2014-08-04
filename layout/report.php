@@ -157,6 +157,8 @@ jQuery(document).ready(function() {
         jQuery('html, body').animate({scrollTop: 0}, duration);
         return false;
     })
+    
+    jQuery(" ul.navbar-nav li ul li").has("ul").addClass("dropdown-submenu");
 });
 </script>
  <a href="#top" class="back-to-top"><i class="fa fa-angle-up "></i></a>

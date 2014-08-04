@@ -87,7 +87,7 @@ echo $OUTPUT->doctype() ?>
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
 <!-- Adds the top navigation to the page including the settings and admin, user menus -->
-<?php require_once(dirname(__FILE__).'/includes/navbar.php'); ?>
+<?php require_once(dirname(__FILE__).'/includes/menu.php'); ?>
 
 <div id="page" class="<?php echo $container; ?>">
 
@@ -167,6 +167,8 @@ jQuery(document).ready(function() {
         jQuery('html, body').animate({scrollTop: 0}, duration);
         return false;
     })
+    
+    jQuery(" ul.navbar-nav li ul li").has("ul").addClass("dropdown-submenu");
 });
 </script>
  <a href="#top" class="back-to-top"><i class="fa fa-angle-up "></i></a>
