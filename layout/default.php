@@ -84,12 +84,10 @@ echo $OUTPUT->doctype() ?>
 </head>
 
 <body <?php echo $OUTPUT->body_attributes(); ?>>
-
-<?php require_once(dirname(__FILE__).'/includes/navbar.php'); ?>
-
-
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
+<!-- Adds the top navigation to the page including the settings and admin, user menus -->
+<?php require_once(dirname(__FILE__).'/includes/navbar.php'); ?>
 
 <div id="page" class="<?php echo $container; ?>">
 
