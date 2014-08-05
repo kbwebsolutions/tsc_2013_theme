@@ -81,9 +81,11 @@ echo $OUTPUT->doctype() ?>
 
 <body <?php echo $OUTPUT->body_attributes(); ?>>
 
-<?php require_once(dirname(__FILE__).'/includes/navbar.php'); ?>
+
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
+
+<?php require_once(dirname(__FILE__).'/includes/menu.php'); ?>
 
 <div id="page" class="<?php echo $container; ?>">
     <header id="page-header" class="clearfix">
@@ -172,6 +174,7 @@ jQuery(document).ready(function() {
     })
     
     jQuery(" ul.navbar-nav li ul li").has("ul").addClass("dropdown-submenu");
+    jQuery("div.navbar-ex1-collapse > ul > li > a").not(":only-child").append("<b class='caret' />");
 });
 </script>
  <a href="#top" class="back-to-top"><i class="fa fa-angle-up "></i></a>

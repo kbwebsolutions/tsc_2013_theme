@@ -498,6 +498,12 @@ h2.quicklinksheader .fa {
     color: #999;
 }
 
+h2.marketingheader .fa, 
+h2.quicklinksheader .fa {
+	color:[[setting:themecolor]];
+}
+
+/*
 h2.marketingheader::after,
 h2.quicklinksheader::after {
 	background-color: [[setting:themecolor]];
@@ -508,6 +514,7 @@ h2.quicklinksheader::after {
 	position: relative;
 	top: 13px;
 }
+*/
 
 /* @group Quick Links */
 
@@ -3353,6 +3360,38 @@ table#explaincaps>tbody>tr:nth-child(odd)>td, table#defineroletable>tbody>tr:nth
 
 
 /* @end */
+
+/* Footer */
+
+#page-footer .footnote {
+	border-top:none;
+}
+/* Social Network links */
+
+.socialicon, .socialicon:visited {
+  background-color:rgba(0, 0, 0, 0.2);
+  background-image:none;
+  border:0 none;
+  color:#BBBBBB;
+  display:inline-block;
+  font-family:FontAwesome;
+  font-size:1em;
+  height:2em;
+  line-height:1em;
+  margin-left:8px;
+  padding:8px;
+  text-align:center;
+  text-decoration:none;
+  width:2em;
+  border-bottom-left-radius:0px;
+  border-bottom-right-radius:0px;
+  border-top-left-radius:0px;
+  border-top-right-radius:0px;
+}
+
+.soicalnetworks {
+	clear:both;
+}
 
 [[setting:customcss]]
 

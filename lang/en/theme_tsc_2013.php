@@ -41,7 +41,7 @@ Website: <a href="http://www.kieranbriggs.co.uk">www.kieranbriggs.co.uk</a>
 </div>';
 
 $string['pluginname'] = 'tsc_2013';
-$string['configtitle'] = 'tsc_2013';
+$string['configtitle'] = 'Sheffield College 2014';
 
 $string['region-side-middle'] = 'Homepage Middle';
 $string['region-hidden-dock'] = 'Admin Only';

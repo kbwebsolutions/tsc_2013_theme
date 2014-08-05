@@ -196,6 +196,11 @@ public function settings_tree(settings_navigation $navigation) {
                 continue;
             }
 
+            // Skip pointless "Current course" node, go straight to its last (sole) child
+            if ($item->key === 'usercurrentsettings') {
+                $item = $item->children->last();
+            }
+
 			$isbranch = ($item->children->count()>0  || $item->nodetype==navigation_node::NODETYPE_BRANCH);
             $hasicon = (!$isbranch && $item->icon instanceof renderable);
 
@@ -210,12 +215,9 @@ public function settings_tree(settings_navigation $navigation) {
             $liclasses = array($item->get_css_type());
             $liexpandable = array();
             if (!$item->forceopen || (!$item->forceopen && $item->collapse) || ($item->children->count()==0  && $item->nodetype==navigation_node::NODETYPE_BRANCH)) {
-                //$liclasses[] = 'collapsed ';
             }
             if ($isbranch) {
                 $liclasses[] = 'dropdown';
-                //$liclasses[] = 'dropdown contains_branch';
-                
                 $liexpandable = array('aria-expanded' => in_array('collapsed', $liclasses) ? "false" : "true");
             } else if ($hasicon) {
                 $liclasses[] = 'item_with_icon';

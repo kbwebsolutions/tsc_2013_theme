@@ -69,7 +69,7 @@ $hassocialnetworks = ($hasfacebook || $hastwitter || $hasgoogleplus || $hasflick
 
 		</div>
 
-		<div class="col-lg-6 pull-right">
+		<div class="socialnetworks col-lg-6 pull-right">
 			<?php			if ($hassocialnetworks) {
 				echo '<ul class="socials unstyled">';
 					if ($hasblog) {
@@ -83,13 +83,6 @@ $hassocialnetworks = ($hasfacebook || $hastwitter || $hasgoogleplus || $hasflick
 						echo '<a href="'.$haswebsite.'" class="socialicon website">';
 						echo '<i class="fa fa-globe fa-inverse"></i>';
 							echo '<span class="sr-only">'.get_string('socialnetworksicondescriptionwebsite','theme_tsc_2013').'</span>';
-						echo '</a>';
-					}
-
-					if ($hasgoogleplus) {
-						echo '<a href="'.$hasgoogleplus.'" class="socialicon googleplus">';
-						echo '<i class="fa fa-google-plus fa-inverse"></i>';
-							echo '<span class="sr-only">'.get_string('socialnetworksicondescriptiongoogleplus','theme_tsc_2013').'</span>';
 						echo '</a>';
 					}
 
@@ -111,6 +104,13 @@ $hassocialnetworks = ($hasfacebook || $hastwitter || $hasgoogleplus || $hasflick
 						echo '<a href="'.$haslinkedin.'" class="socialicon linkedin">';
 						echo '<i class="fa fa-linkedin fa-inverse"></i>';
 							echo '<span class="sr-only">'.get_string('socialnetworksicondescriptionlinkedin','theme_tsc_2013').'</span>';
+						echo '</a>';
+					}
+
+					if ($hasgoogleplus) {
+						echo '<a href="'.$hasgoogleplus.'" class="socialicon googleplus">';
+						echo '<i class="fa fa-google-plus fa-inverse"></i>';
+							echo '<span class="sr-only">'.get_string('socialnetworksicondescriptiongoogleplus','theme_tsc_2013').'</span>';
 						echo '</a>';
 					}
 
