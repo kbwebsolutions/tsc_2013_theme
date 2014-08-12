@@ -246,7 +246,7 @@ public function settings_tree(settings_navigation $navigation) {
                 $divattr['id'] = $item->id;
             }
             
-           $content = html_writer::tag('a', $content, $divattr) . $this->navigation_node($item);
+           $content = html_writer::tag('a', $content, $divattr) . $this->new_navigation_node($item);
             
             $content = html_writer::tag('li', $content, $liattr);
             $lis[] = $content;
@@ -259,7 +259,7 @@ public function settings_tree(settings_navigation $navigation) {
         }
     }
 
-
+/*
  protected function navigation_node(navigation_node $node, $attrs=array('class'=>'dropdown-menu')) {
         global $CFG, $PAGE;
         $items = $node->children;
@@ -330,8 +330,9 @@ public function settings_tree(settings_navigation $navigation) {
             if (!empty($item->id)) {
                 $divattr['id'] = $item->id;
             }
-            
-           $content = html_writer::tag('a', $content, $divattr) . $this->navigation_node($item);
+           $content = html_writer::tag('p', $content, $divattr) . $this->navigation_node($item);
+             
+           //$content = html_writer::tag('a', $content, $divattr) . $this->navigation_node($item);
             
             $content = html_writer::tag('li', $content, $liattr);
             $lis[] = $content;
@@ -343,7 +344,7 @@ public function settings_tree(settings_navigation $navigation) {
             return '';
         }
     }
-
+*/
 	
 	protected function render_admin_menu(custom_menu $menu) {
 		global $CFG, $PAGE;
