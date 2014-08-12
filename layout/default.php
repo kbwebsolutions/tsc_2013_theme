@@ -169,7 +169,8 @@ jQuery(document).ready(function() {
     })
     
     jQuery(" ul.navbar-nav li ul li").has("ul").addClass("dropdown-submenu");
-    jQuery("div.navbar-ex1-collapse > ul > li > a").not(":only-child").append("<b class='caret' />");
+    jQuery("div.supermenu > ul > li > a").not(":only-child").append("<b class='caret' />");
+    jQuery("div.supermenu a:empty").addClass("display:none;");
 });
 </script>
  <a href="#top" class="back-to-top"><i class="fa fa-angle-up "></i></a>
