@@ -115,7 +115,7 @@ $THEME->layouts = array(
     ),
     // Server administration scripts.
     'admin' => array(
-        'file' => 'default.php',
+        'file' => 'admin.php',
         'regions' => array('side-post'),
         'defaultregion' => 'side-post',
     ),
