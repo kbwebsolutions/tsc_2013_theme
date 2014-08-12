@@ -372,11 +372,11 @@ public function settings_tree(settings_navigation $navigation) {
         $addlangmenu = true;
         $addmessagemenu = true;
 
-        if (!isloggedin() || isguestuser()) {
+        if (!isloggedin() || isguestuser()  || $CFG->messaging == 0) {
             $addmessagemenu = false;
         }
 
-        if ($addmessagemenu) {
+	        if ($addmessagemenu) {
             $messages = $this->get_user_messages();
             $messagecount = count($messages);
             //tsc_2013 custom line start
