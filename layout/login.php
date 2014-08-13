@@ -391,7 +391,7 @@ echo $OUTPUT->doctype() ?>
 </div>
 
 <footer id="page-footer" class="footer-fixed-bottom hidden-sm hidden-xs">
-	<?php require_once(dirname(__FILE__).'/includes/footer.php'); ?>
+	<?php require_once(dirname(__FILE__).'/includes/frontpagefooter.php'); ?>
 </footer>
 
 <script>
