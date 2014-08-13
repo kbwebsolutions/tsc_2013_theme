@@ -1,0 +1,16 @@
+.section li.modtype_forum {
+	display:block;
+	background:#fff;
+	border-left:3px solid #ff0000;
+	border-top:3px solid #ff0000;
+	border-radius:3px;
+	border-bottom:none;
+	border-right:none;
+	border-radius: 0px;
+	width:90%;
+	box-shadow: 2px 2px 2px #b4b4b4;
+}
+
+.section li.modtype_forum .activityintance {
+	padding-left:20%;
+}
