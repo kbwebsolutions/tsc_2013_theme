@@ -95,7 +95,7 @@ $THEME->layouts = array(
         'options' => array('langmenu'=>true),
     ),
     'coursecategory' => array(
-        'file' => 'default.php',
+        'file' => 'coursecat.php',
         'regions' => array('side-post'),
         'defaultregion' => 'side-post',
     ),
