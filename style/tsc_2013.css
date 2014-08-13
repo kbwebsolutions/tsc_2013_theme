@@ -1,5 +1,9 @@
 /* @group Core */
 
+/* Login Page */
+.loginpanel form a {
+	margin-top:1em;
+}
 /* This is the Menu CSS KRB */
 .dropdown-submenu {
     position: relative;
