@@ -114,13 +114,7 @@ echo $OUTPUT->doctype() ?>
          
     
         <div id="region-main" class="<?php echo $regions['content']; ?>">
-			
-			<?php  echo $OUTPUT->course_content_header();
-			echo $OUTPUT->main_content(); 
-			echo $OUTPUT->course_content_footer();
-            ?>
-            
-            <!-- Start Quick Links -->
+		           <!-- Start Quick Links -->
 		    <?php
 		    	if($hasquicklinks==1) {
 		    		require_once(dirname(__FILE__).'/includes/quicklinks.php');
@@ -131,6 +125,12 @@ echo $OUTPUT->doctype() ?>
 		    	}
 		    ?>
 		    <!-- End Quick Links -->
+ 	
+			<?php  echo $OUTPUT->course_content_header();
+			echo $OUTPUT->main_content(); 
+			echo $OUTPUT->course_content_footer();
+            ?>
+            
             
         </div>
 
