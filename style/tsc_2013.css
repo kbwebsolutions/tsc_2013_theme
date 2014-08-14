@@ -3425,6 +3425,16 @@ border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
 	border:none;
 }
 
+#course-banner h3 {
+	padding:40px 0px 40px 250px;
+	font-size: 24px;
+	font-weight:bold;
+	line-height:1.4em;
+	width:780px;
+	
+
+}
+
 .head94 {background: url([[pix:theme|banners/MoodleBannerOnlineCollege]]) no-repeat center; color:#666;}						/* Online College */ 
 /* .head150 Horticulture */
 .head133 {background: url([[pix:theme|banners/MoodleBannersdanimal]]) no-repeat center; color:#666;}							/* Science and Animal Care */ 
