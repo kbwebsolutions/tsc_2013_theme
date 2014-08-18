@@ -3190,7 +3190,7 @@ table#categoryquestions {
 /* @group Misc */
 
 #page-login-index #page-content {
-	background-color: transparent;
+	background:#fff url([[pix:theme|skyline]]) no-repeat center bottom;
 }
 
 #page-login-index h2,

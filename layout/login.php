@@ -283,6 +283,7 @@ echo $OUTPUT->doctype() ?>
 
 <div id="page">
     <div id="page-content" class="<?php echo $container; ?>">
+     <div id="page-banner" class="banner"><img src="<?php echo $OUTPUT->pix_url('banner', 'theme'); ?>" alt="logo" width="100%"/></div>
         <div id="region-main" class="row">
             <div class="loginpanel col-md-4 col-md-offset-1 col-sd-6 col-sd-offset-0">
                 <?php
