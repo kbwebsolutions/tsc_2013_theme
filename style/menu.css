@@ -1,5 +1,9 @@
+.dropdown-menu {
+	min-width: 180px;
+}
 .dropdown-submenu {
     position: relative;
+    min-width: 180px;
 }
 
 .supermenu ul {
