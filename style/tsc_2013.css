@@ -3484,3 +3484,21 @@ border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
 	margin: 1em auto;
 	padding:1.5em;
 }
+
+.marque {
+  width: 100%; white-space: nowrap;
+  overflow: hidden;
+  overflow-x:-webkit-marquee;
+  -webkit-marquee-direction: backwards;
+  -webkit-marquee-style: scroll;
+  -webkit-marquee-speed: normal;
+  -webkit-marquee-increment: small;
+  overflow-x: marquee-line;
+  marquee-direction: backwards;
+  marquee-style: scroll;
+  marquee-speed: fast;
+  marquee-play-count: 5;
+  background:-webkit-gradient(linear, 35% 59%, 36% 0%, from(#FF2739), to(#FF0000));
+  color:#fff;
+  text-transform:uppercase;
+}
