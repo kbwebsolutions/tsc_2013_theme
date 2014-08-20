@@ -83,7 +83,7 @@ $THEME->layouts = array(
     ),
     // Standard layout with blocks, this is recommended for most pages with general information.
     'standard' => array(
-        'file' => 'default.php',
+        'file' => 'coursecat.php',
         'regions' => array('side-post'),
         'defaultregion' => 'side-post',
     ),
