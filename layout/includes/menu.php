@@ -23,6 +23,6 @@
         </ul>
         -->
     </div>
-    <div class="marque"><p align="center">This site is for revision purposes only.  You cannot add any content to this site.</p></div>
+    <!--<div class="marque"><p align="center">This site is for revision purposes only.  You cannot add any content to this site.</p></div>-->
     </div>
 </nav>
