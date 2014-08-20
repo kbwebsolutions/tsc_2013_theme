@@ -3489,6 +3489,11 @@ border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
   width: 100%; white-space: nowrap;
   overflow: hidden;
   overflow-x:-webkit-marquee;
+  marquee-direction: backwards;
+  marquee-style: scroll;
+  marquee-speed: normal;
+  marquee-increment: small;
+
   -webkit-marquee-direction: backwards;
   -webkit-marquee-style: scroll;
   -webkit-marquee-speed: normal;
@@ -3501,4 +3506,10 @@ border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
   background:-webkit-gradient(linear, 35% 59%, 36% 0%, from(#FF2739), to(#FF0000));
   color:#fff;
   text-transform:uppercase;
+}
+
+.marque p {
+	color: #fff;
+	padding-top: 0.5em;
+	font-weight: bold;
 }
