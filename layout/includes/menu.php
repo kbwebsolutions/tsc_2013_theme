@@ -14,11 +14,10 @@
         
         <?php echo $OUTPUT->user_menu(); ?>
         <!--<?php echo $OUTPUT->search_form(new moodle_url("$CFG->wwwroot/$CFG->admin/search.php"), optional_param('query', '', PARAM_RAW)); ?>   -->
+       <div class="collapse navbar-collapse supermenu">
        <?php echo $OUTPUT->admin_menu(); ?>
-        <!--  Not Sure what this is doing
-      <ul class="nav pull-right">
-            <li><?php echo $OUTPUT->page_heading_menu(); ?></li>
-        </ul>
+       </div>
+      <!--  Not Sure what this is doing
         -->
     </div>
     <!--<div class="marque"><p align="center">This site is for revision purposes only.  You cannot add any content to this site.</p></div>-->
