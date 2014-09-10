@@ -175,7 +175,7 @@ class theme_tsc_2013_core_renderer extends core_renderer {
 
 public function settings_tree(settings_navigation $navigation) {
        
-        $content = $this->new_navigation_node($navigation, array('class'=>'nav navbar-nav'));
+        $content = $this->new_navigation_node($navigation, array('class'=>'nav navbar-nav settings-nav'));
         return $content;
     }
 
