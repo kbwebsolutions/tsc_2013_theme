@@ -196,60 +196,59 @@ public function settings_tree(settings_navigation $navigation) {
                 continue;
             }
 
-            // Skip pointless "Current course" node, go straight to its last (sole) child
-            if ($item->key === 'usercurrentsettings') {
-                $item = $item->children->last();
-            }
-
-			$isbranch = ($item->children->count()>0  || $item->nodetype==navigation_node::NODETYPE_BRANCH);
-            $hasicon = (!$isbranch && $item->icon instanceof renderable);
-
-            if ($isbranch) {
-                $item->hideicon = true;
-            }
+            // Skip pointless "Current course" 
+            if ($item->key != 'usercurrentsettings') {
             
-            //$content = '';
-            $content = $this->render($item);
-
-            // this applies to the li item which contains all child lists too
-            $liclasses = array($item->get_css_type());
-            $liexpandable = array();
-            if (!$item->forceopen || (!$item->forceopen && $item->collapse) || ($item->children->count()==0  && $item->nodetype==navigation_node::NODETYPE_BRANCH)) {
-            }
-            if ($isbranch) {
-                $liclasses[] = 'dropdown';
-                $liexpandable = array('aria-expanded' => in_array('collapsed', $liclasses) ? "false" : "true");
-            } else if ($hasicon) {
-                $liclasses[] = 'item_with_icon';
-            }
-            
-            $liattr = array('class' => join(' ',$liclasses)) + $liexpandable;
-            // class attribute on the div item which only contains the item content
-            $divclasses = array();
-            $datatoggle = array();
-            if ($isbranch) {
-                $divclasses[] = 'dropdown-toggle';
-                $datatoggle[] = 'dropdown';
-                
-            } else {
-                $divclasses[] = 'leaf';
-            }
-            if (!empty($item->classes) && count($item->classes)>0) {
-                $divclasses[] = join(' ', $item->classes);
-            }
-           if(!empty($datatoggle)) {
-            	$divattr = array('class'=>join(' ', $divclasses), 'data-toggle'=>join(' ', $datatoggle));
-            } else {
-	            $divattr = array('class'=>join(' ', $divclasses));
-            }
-            if (!empty($item->id)) {
-                $divattr['id'] = $item->id;
-            }
-            
-           $content = html_writer::tag('a', $content, $divattr) . $this->new_navigation_node($item);
-            
-            $content = html_writer::tag('li', $content, $liattr);
-            $lis[] = $content;
+            	$isbranch = ($item->children->count()>0  || $item->nodetype==navigation_node::NODETYPE_BRANCH);
+	            $hasicon = (!$isbranch && $item->icon instanceof renderable);
+	
+	            if ($isbranch) {
+	                $item->hideicon = true;
+	            }
+	            
+	            //$content = '';
+	            $content = $this->render($item);
+	
+	            // this applies to the li item which contains all child lists too
+	            $liclasses = array($item->get_css_type());
+	            $liexpandable = array();
+	            if (!$item->forceopen || (!$item->forceopen && $item->collapse) || ($item->children->count()==0  && $item->nodetype==navigation_node::NODETYPE_BRANCH)) {
+	            }
+	            if ($isbranch) {
+	                $liclasses[] = 'dropdown';
+	                $liexpandable = array('aria-expanded' => in_array('collapsed', $liclasses) ? "false" : "true");
+	            } else if ($hasicon) {
+	                $liclasses[] = 'item_with_icon';
+	            }
+	            
+	            $liattr = array('class' => join(' ',$liclasses)) + $liexpandable;
+	            // class attribute on the div item which only contains the item content
+	            $divclasses = array();
+	            $datatoggle = array();
+	            if ($isbranch) {
+	                $divclasses[] = 'dropdown-toggle';
+	                $datatoggle[] = 'dropdown';
+	                
+	            } else {
+	                $divclasses[] = 'leaf';
+	            }
+	            if (!empty($item->classes) && count($item->classes)>0) {
+	                $divclasses[] = join(' ', $item->classes);
+	            }
+	           if(!empty($datatoggle)) {
+	            	$divattr = array('class'=>join(' ', $divclasses), 'data-toggle'=>join(' ', $datatoggle));
+	            } else {
+		            $divattr = array('class'=>join(' ', $divclasses));
+	            }
+	            if (!empty($item->id)) {
+	                $divattr['id'] = $item->id;
+	            }
+	            
+	           $content = html_writer::tag('a', $content, $divattr) . $this->new_navigation_node($item);
+	            
+	            $content = html_writer::tag('li', $content, $liattr);
+	            $lis[] = $content;
+	        }
         }
 
         if (count($lis)) {
