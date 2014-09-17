@@ -2044,7 +2044,7 @@ div.section-navigation.navigationtitle .mdl-right{
 	color: [[setting:themecolor]];
 	line-height:1.5; 
 	clear:both;
-	margin-top: -20px;
+	margin-top: 10px;
 }
 
 #section_footer a{
