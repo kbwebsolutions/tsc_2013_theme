@@ -852,6 +852,7 @@ border-bottom-color: #888;
 	margin-top: 10px;
 	margin-bottom: 20px;
 	text-transform: uppercase;
+	width:80%;
 }
 
 .breadcrumb-current-location {
