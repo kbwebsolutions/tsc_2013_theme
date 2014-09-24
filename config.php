@@ -59,7 +59,7 @@ if ((!empty($THEME->settings->enablecustomlogin)) && ($THEME->settings->enablecu
 	$loginlayout='login.php';
   $loginsheet='login1';
 } else {
-  $loginlayout='default.php';
+  $loginlayout='columns2.php';
   $loginsheet='login2';
 }
 
@@ -78,7 +78,7 @@ if ('ltr' === get_string('thisdirection', 'langconfig')) {
 $THEME->layouts = array(
     // Most backwards compatible layout without the blocks - this is the layout used by default.
     'base' => array(
-        'file' => 'default.php',
+        'file' => 'columns2.php',
         'regions' => array(),
     ),
     // Standard layout with blocks, this is recommended for most pages with general information.
@@ -89,7 +89,7 @@ $THEME->layouts = array(
     ),
     // Main course page.
     'course' => array(
-        'file' => 'default.php',
+        'file' => 'columns2.php',
         'regions' => array('side-post', 'notices'),
         'defaultregion' => 'side-post',
         'options' => array('langmenu'=>true),
@@ -101,7 +101,7 @@ $THEME->layouts = array(
     ),
     // part of course, typical for modules - default page layout if $cm specified in require_login().
     'incourse' => array(
-        'file' => 'default.php',
+        'file' => 'columns2.php',
         'regions' => array('side-post', 'notices'),
         'defaultregion' => 'side-post',
         'options' => array('usereader' => true),
@@ -128,7 +128,7 @@ $THEME->layouts = array(
     ),
     // My public page.
     'mypublic' => array(
-        'file' => 'default.php',
+        'file' => 'columns2.php',
         'regions' => array('side-post'),
         'defaultregion' => 'side-post',
     ),
@@ -140,13 +140,13 @@ $THEME->layouts = array(
 
     // Pages that appear in pop-up windows - no navigation, no blocks, no header.
     'popup' => array(
-        'file' => 'default.php',
+        'file' => 'columns2.php',
         'regions' => array(),
         'options' => array('nofooter'=>true, 'nonavbar'=>false),
     ),
     // No blocks and minimal footer - used for legacy frame layouts only!
     'frametop' => array(
-        'file' => 'default.php',
+        'file' => 'columns2.php',
         'regions' => array(),
         'options' => array('nofooter'=>true, 'nocoursefooter'=>true),
     ),
@@ -164,7 +164,7 @@ $THEME->layouts = array(
     ),
     // Should display the content and basic headers only.
     'print' => array(
-        'file' => 'default.php',
+        'file' => 'columns2.php',
         'regions' => array(),
         'options' => array('nofooter'=>true, 'nonavbar'=>false),
     ),
