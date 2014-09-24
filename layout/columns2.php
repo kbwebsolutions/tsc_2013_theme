@@ -45,12 +45,6 @@ if (!empty($CFG->themedir) and file_exists("$CFG->themedir/tsc_2013")) {
     $themedir = $CFG->dirroot."/theme/tsc_2013";
 }
 
-if ($haslogo) {
-    $logo = '<div id="logo"></div>';
-} else {
-    $logo = $SITE->shortname;
-}
-
 if ($invert) {
   $navbartype = 'navbar-inverse';
 } else {
@@ -86,7 +80,7 @@ echo $OUTPUT->doctype() ?>
 <?php echo $OUTPUT->standard_top_of_body_html() ?> 
 
 <!-- Adds the top navigation to the page including the settings and admin, user menus -->
-<!--<?php require_once(dirname(__FILE__).'/includes/menu.php'); ?>-->
+ <?php require_once(dirname(__FILE__).'/includes/menu.php'); ?> 
 
 <div id="page" class="<?php echo $container; ?>">
   <header id="page-header" class="clearfix">
@@ -106,7 +100,7 @@ echo $OUTPUT->doctype() ?>
     <div id="course-banner" class=" <?php echo $regions['content']; ?>"> <?php echo $OUTPUT->blocks('notices'); ?> </div>
     <div id="region-main" class="<?php echo $regions['content']; ?>">
       <?php
-            echo $OUTPUT->course_content_header(); 
+      		echo $OUTPUT->course_content_header(); 
             echo $OUTPUT->main_content();
             echo $OUTPUT->course_content_footer();
             ?>
