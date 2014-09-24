@@ -28,7 +28,6 @@ $hassidepost = $PAGE->blocks->region_has_content('side-post', $OUTPUT);
 $hascopyright = (empty($PAGE->theme->settings->copyright)) ? false : $PAGE->theme->settings->copyright;
 $hasfootnote = (empty($PAGE->theme->settings->footnote)) ? false : $PAGE->theme->settings->footnote;
 $hastiles = (!empty($PAGE->theme->settings->tiles));
-$haslogo = (empty($PAGE->theme->settings->logo)) ? false : $PAGE->theme->settings->logo;
 $invert = (!empty($PAGE->theme->settings->invert)) ? true : $PAGE->theme->settings->invert;
 $fluid = (!empty($PAGE->layout_options['fluid']));
 
@@ -76,68 +75,48 @@ $PAGE->requires->jquery();
 echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes(); ?>>
 <head>
-    <title><?php echo $OUTPUT->page_title(); ?></title>
-    <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>" />
-    <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
-    <?php echo $OUTPUT->standard_head_html() ?>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title><?php echo $OUTPUT->page_title(); ?></title>
+<link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>" />
+<link href='//fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
+<?php echo $OUTPUT->standard_head_html() ?>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body <?php echo $OUTPUT->body_attributes(); ?>>
-<?php echo $OUTPUT->standard_top_of_body_html() ?>
+<?php echo $OUTPUT->standard_top_of_body_html() ?> 
 
 <!-- Adds the top navigation to the page including the settings and admin, user menus -->
 <?php require_once(dirname(__FILE__).'/includes/menu.php'); ?>
 
 <div id="page" class="<?php echo $container; ?>">
-
-<header id="page-header" class="clearfix">
-        <div id="course-header">
-            <?php echo $OUTPUT->course_header(); ?>
-            
-                </div>
-    </header>
-
-    <div id="page-content" class="row">
+  <header id="page-header" class="clearfix">
+    <div id="course-header"> <?php echo $OUTPUT->course_header(); ?> </div>
+  </header>
+  <div id="page-content" class="row">
     <div id="page-banner" class="banner"><img src="<?php echo $OUTPUT->pix_url('banner', 'theme'); ?>" alt="logo" width="100%"/></div>
-
-        <div id="moodle-navbar" class="navbar-collapse collapse">
-        <?php echo $OUTPUT->custom_menu(); ?>
-
-        </div>
-      <div id="page-navbar" class="container">
-        <nav class="breadcrumb-nav" role="navigation" aria-label="breadcrumb"><?php echo $OUTPUT->navbar(); ?></nav>
-        <div class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></div>
-    </div>  
-
-                     <?php
+    <div id="moodle-navbar" class="navbar-collapse collapse"> <?php echo $OUTPUT->custom_menu(); ?> </div>
+    <div id="page-navbar" class="container">
+      <nav class="breadcrumb-nav" role="navigation" aria-label="breadcrumb"><?php echo $OUTPUT->navbar(); ?></nav>
+      <div class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></div>
+    </div>
+    <?php
         if ($knownregionpost) {
             echo $OUTPUT->blocks('side-post', $regions['post']);
         }?>
-         <div id="course-banner" class=" <?php echo $regions['content']; ?>">
-            	<?php echo $OUTPUT->blocks('notices'); ?>
-            </div>
-
-            
-        <div id="region-main" class="<?php echo $regions['content']; ?>">
-                    <?php
+    <div id="course-banner" class=" <?php echo $regions['content']; ?>"> <?php echo $OUTPUT->blocks('notices'); ?> </div>
+    <div id="region-main" class="<?php echo $regions['content']; ?>">
+      <?php
             echo $OUTPUT->course_content_header(); 
             echo $OUTPUT->main_content();
             echo $OUTPUT->course_content_footer();
             ?>
-        </div>
-
-  
     </div>
-
+  </div>
 </div>
-
 <footer id="page-footer">
-	<?php require_once(dirname(__FILE__).'/includes/footer.php'); ?>
+  <?php require_once(dirname(__FILE__).'/includes/footer.php'); ?>
 </footer>
-
-<?php echo $OUTPUT->standard_end_of_body_html() ?>
-
+<?php echo $OUTPUT->standard_end_of_body_html() ?> 
 <script>
     $('body').show();
     $('.version').text(NProgress.version);
@@ -148,8 +127,7 @@ echo $OUTPUT->doctype() ?>
     $("#b-40").click(function() { NProgress.set(0.4); });
     $("#b-inc").click(function() { NProgress.inc(); });
     $("#b-100").click(function() { NProgress.done(); });
-</script>
-
+</script> 
 <script type="text/javascript">
 jQuery(document).ready(function() {
     var offset = 220;
@@ -172,7 +150,7 @@ jQuery(document).ready(function() {
     jQuery("div.supermenu > ul > li > a").not(":only-child").append("<b class='caret' />");
     jQuery("div.supermenu a:empty").addClass("display:none;");
 });
-</script>
- <a href="#top" class="back-to-top"><i class="fa fa-angle-up "></i></a>
+</script> 
+<a href="#top" class="back-to-top"><i class="fa fa-angle-up "></i></a>
 </body>
 </html>
