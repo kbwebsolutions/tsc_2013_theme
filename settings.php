@@ -1,5 +1,5 @@
 <?php
-// This file is part of the custom Moodle elegance theme
+// This file is part of the custom Moodle tsc_2013 theme
 //
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -16,7 +16,7 @@
 
 
 /**
- * Renderers to align Moodle's HTML with that expected by elegance
+ * Renderers to align Moodle's HTML with that expected by tsc_2013
  *
  * @package    theme_tsc_2013
  * @copyright  2014 Julian Ridden http://moodleman.net
