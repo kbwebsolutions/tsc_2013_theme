@@ -238,7 +238,7 @@ $string['loginimagedesc'] = 'The ideal size for background images is 1200x800 pi
 /* Marketing Spots */
 $string['marketingheading'] = 'Marketing Spots';
 $string['marketinginfodesc'] = 'Enter the settings for your marketing spot.';
-$string['marketingheadingsub'] = 'Three locations on the front page to add information and links';
+$string['marketingheadingsub'] = 'Edit the link buttons on the myMoodle page';
 $string['marketingheight'] = 'Height of Marketing Images';
 $string['marketingheightdesc'] = 'If you want to display images in the Marketing boxes you can specify their hight here.';
 $string['marketingdesc'] = 'This theme provides the option of enabling three "marketing" or "ad" spots just under the slideshow.  These allow you to easily identify core information to your users and provide direct links.';
@@ -271,8 +271,8 @@ $string['marketingbuttonurldesc'] = 'URL the button will point to.';
 
 /* Quick Links */
 $string['quicklinksheading'] = 'Quick links';
-$string['quicklinksheadingdesc'] = 'Enter the settings for your front page Quick Links';
-$string['quicklinksheadingsub'] = 'Locations on the front page to add information and links';
+$string['quicklinksheadingdesc'] = 'Enter the settings for your myMoodle page Quick Links';
+$string['quicklinksheadingsub'] = 'Locations on the myMoodle page to add information and links';
 $string['quicklinksdesc'] = 'This theme provides the option of enabling "Quick Link" spots.  These allow you to create locations that link to any URL of your choice.';
 
 $string['togglequicklinks'] = 'Quick Links display';
@@ -284,10 +284,10 @@ $string['quicklinksicondesc'] = 'Name of the icon you wish to use in the heading
 $string['quicklinks'] = 'Quick Link Number ';
 
 $string['quicklinksnumber'] = 'Number of Links';
-$string['quicklinksnumberdesc'] = 'How many quick links to you want to display on the front page.';
+$string['quicklinksnumberdesc'] = 'How many quick links to you want to display on the myMoodle page.';
 
 $string['quicklinkstitle'] = 'Area heading';
-$string['quicklinkstitledesc'] = 'The name associated with the Quick Links area on the front page.';
+$string['quicklinkstitledesc'] = 'The name associated with the Quick Links area on the myMoodle page.';
 
 $string['quicklinkicon'] = 'Icon';
 $string['quicklinkicondesc'] = 'Name of the icon you wish to use. List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>.  Just enter what is after the "fa-".';
