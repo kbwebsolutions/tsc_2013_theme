@@ -1,0 +1,30 @@
+/* this stylesheet is to style up the lesson module.
+/* Each style must be preceeded by .path-mod-lesson
+*/
+
+.path-mod-lesson #region-main {
+	border:0px !important
+}
+
+.path-mod-lesson .answeroption {
+margin: 2px 0px;
+color: #fff;
+padding: 5px;
+background-color: undefined;background-image:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSczMDAnIGhlaWdodD0nMzAwJz4KCTxkZWZzPgoJCTxsaW5lYXJHcmFkaWVudCBpZD0nZycgIHgyPScwJyB5Mj0nMTAwJSc+CgkJCTxzdG9wIG9mZnNldD0nMCUnIHN0eWxlPSdzdG9wLWNvbG9yOiMyZTJlMmU7c3RvcC1vcGFjaXR5OjEnIC8+CgkJCTxzdG9wIG9mZnNldD0nMTAwJScgc3R5bGU9J3N0b3AtY29sb3I6IzIyMjIyMjtzdG9wLW9wYWNpdHk6MScgLz4KCQk8L2xpbmVhckdyYWRpZW50PgoJCTxwYXR0ZXJuIGlkPSdiJyBwYXR0ZXJuVW5pdHM9J3VzZXJTcGFjZU9uVXNlJyB4PScwJyB5PScwJyB3aWR0aD0nMjAnIGhlaWdodD0nMTAnIHZpZXdCb3g9JzAgMCAyMCAxMCcgPgoJCQk8cmVjdCBmaWxsPSd1cmwoI2cpJyB4PSc5JyB5PSctNicgd2lkdGg9JzEyJyBoZWlnaHQ9JzEyJy8+CgkJCTxyZWN0IGZpbGw9J3VybCgjZyknIHg9JzknIHk9JzUnIHdpZHRoPScxMicgaGVpZ2h0PScxMCcvPgoJCQk8cmVjdCBmaWxsPSd1cmwoI2cpJyB3aWR0aD0nMTAnIGhlaWdodD0nMTAnLz4KCQk8L3BhdHRlcm4+IAoJCTxmaWx0ZXIgaWQ9J2Z1enonIHg9JzAnIHk9JzAnPgoJCQk8ZmVUdXJidWxlbmNlIHR5cGU9J3R1cmJ1bGVuY2UnIHJlc3VsdD0ndCcgYmFzZUZyZXF1ZW5jeT0nLjIgLjMnIG51bU9jdGF2ZXM9JzUnIHN0aXRjaFRpbGVzPSdzdGl0Y2gnLz4KCQkJPGZlQ29sb3JNYXRyaXggdHlwZT0nc2F0dXJhdGUnIGluPSd0JyB2YWx1ZXM9JzAnLz4KCQk8L2ZpbHRlcj4KCTwvZGVmcz4KCTxyZWN0IHdpZHRoPScxMDAlJyBoZWlnaHQ9JzEwMCUnIGZpbGw9J3VybCgjYiknLz4KPHJlY3Qgd2lkdGg9JzEwMCUnIGhlaWdodD0nMTAwJScgZmlsdGVyPSd1cmwoI2Z1enopJyBvcGFjaXR5PScwLjEnLz4KPC9zdmc+Cg==');
+}
+
+.path-mod-lesson .fcontainer > .contents {
+padding: 10px;
+border-radius: 5px;
+color: rgba(37,37,37,0.94);
+background-image:url([[pix:theme|lessonbackground]]);
+}
+
+.path-mod-lesson .fcontainer > .contents h3 {
+color: #fff;text-shadow: 1px 1px #000;background:#7f7f7f;
+ background:rgba(0,0,0,0.5);
+}
+
+.path-mod-lesson #fitem_id_submitbutton {
+	margin-top: 0.5em;
+}
