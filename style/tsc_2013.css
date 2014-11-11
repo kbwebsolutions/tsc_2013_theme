@@ -1,4 +1,8 @@
 /* @group Core */
+	
+ul, ol {
+	margin-left: 30px !important;
+}
 
 /* Login Page */
 .loginpanel form a {
