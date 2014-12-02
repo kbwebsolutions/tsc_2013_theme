@@ -1,6 +1,6 @@
 /* @group Core */
 	
-ul, ol {
+#region-main ul, #region-main ol {
 	margin-left: 30px !important;
 }
 
