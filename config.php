@@ -108,7 +108,7 @@ $THEME->layouts = array(
     ),
     // The site home page.
     'frontpage' => array(
-        'file' => 'frontpage.php',
+        'file' => 'columns2.php',
         'regions' => array('side-post','side-middle','hidden-dock'),
         'defaultregion' => 'side-post',
         'options' => array('nonavbar'=>false),
@@ -175,7 +175,7 @@ $THEME->layouts = array(
     ),
     // The pagelayout used for reports.
     'report' => array(
-        'file' => 'report.php',
+        'file' => 'admin.php',
         'regions' => array('side-post'),
         'defaultregion' => 'side-post',
         'options' => array('usereader' => true),
