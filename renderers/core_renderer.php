@@ -271,7 +271,7 @@ public function settings_tree(settings_navigation $navigation) {
         return $content;
 	}
 
-    public function user_menu() {
+    public function user_menu($USER = NULL, $withlinks = NULL) {
         global $CFG;
         $usermenu = new custom_menu('', current_language());
         return $this->render_user_menu($usermenu);
