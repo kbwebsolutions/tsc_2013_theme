@@ -69,11 +69,7 @@ if ((!empty($THEME->settings->tiles)) && ($THEME->settings->tiles == '1')) {
 	$tilessheet ='';
 }
 
-if ('ltr' === get_string('thisdirection', 'langconfig')) {
-    $THEME->sheets = array('moodle', 'font-awesome.min', $categorysheet , $tilessheet, $loginsheet, ' nprogress', 'tsc_2013', 'menu', 'lesson');
-} else {
-    $THEME->sheets = array('moodle-rtl', 'tinymce-rtl', 'yui2-rtl', 'forms-rtl', 'font-awesome.min', $categorysheet , $tilessheet, $loginsheet, ' nprogress', 'tsc_2013', 'menu', 'lesson');
-}
+$THEME->sheets = array('moodle', 'font-awesome.min', $categorysheet , $tilessheet, $loginsheet, ' nprogress', 'tsc_2013', 'menu', 'lesson');
 
 $THEME->layouts = array(
     // Most backwards compatible layout without the blocks - this is the layout used by default.
