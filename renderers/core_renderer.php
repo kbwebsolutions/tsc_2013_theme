@@ -288,41 +288,40 @@ public function settings_tree(settings_navigation $navigation) {
             $addmessagemenu = false;
         }
 
-	        if ($addmessagemenu) {
-            $messages = $this->get_user_messages();
-            $messagecount = count($messages);
-            //tsc_2013 custom line start
-            $messagemenu = $menu->add('<i class="fa fa-envelope"></i>'.
-            //tsc_2013 custom line end
-                $messagecount . ' ' . get_string('messages', 'message'),
-                new moodle_url('/message/index.php', array('viewing' => 'recentconversations')),
-                get_string('messages', 'message'),
-                9999
-            );
-            foreach ($messages as $message) {
-
-                if (!$message->from) { // Workaround for issue #103.
-                    continue;
+        if ($addmessagemenu) {
+                $messages = $this->get_user_messages();
+                $messagecount = count($messages);
+                //tsc_2013 custom line start
+                $messagemenu = $menu->add('<i class="fa fa-envelope"></i>'.
+                //tsc_2013 custom line end
+                    $messagecount . ' ' . get_string('messages', 'message'),
+                    new moodle_url('/message/index.php', array('viewing' => 'recentconversations')),
+                    get_string('messages', 'message'),
+                    9999
+                );
+                foreach ($messages as $message) {
+                    if (!$message->from) { // Workaround for issue #103.
+                        continue;
+                    }
+                    $senderpicture = new user_picture($message->from);
+                    $senderpicture->link = false;
+                    $senderpicture = $this->render($senderpicture);
+    
+                    $messagecontent = $senderpicture;
+                    $messagecontent .= html_writer::start_span('msg-body');
+                    $messagecontent .= html_writer::start_span('msg-title');
+                    $messagecontent .= html_writer::span($message->from->firstname . ': ', 'msg-sender');
+                    $messagecontent .= $message->text;
+                    $messagecontent .= html_writer::end_span();
+                    $messagecontent .= html_writer::start_span('msg-time');
+                    $messagecontent .= html_writer::tag('i', '', array('class' => 'icon-time'));
+                    $messagecontent .= html_writer::span($message->date);
+                    $messagecontent .= html_writer::end_span();
+    
+                    $messageurl = new moodle_url('/message/index.php', array('user1' => $USER->id, 'user2' => $message->from->id));
+                    $messagemenu->add($messagecontent, $messageurl, $message->state);
                 }
-                $senderpicture = new user_picture($message->from);
-                $senderpicture->link = false;
-                $senderpicture = $this->render($senderpicture);
-
-                $messagecontent = $senderpicture;
-                $messagecontent .= html_writer::start_span('msg-body');
-                $messagecontent .= html_writer::start_span('msg-title');
-                $messagecontent .= html_writer::span($message->from->firstname . ': ', 'msg-sender');
-                $messagecontent .= $message->text;
-                $messagecontent .= html_writer::end_span();
-                $messagecontent .= html_writer::start_span('msg-time');
-                $messagecontent .= html_writer::tag('i', '', array('class' => 'icon-time'));
-                $messagecontent .= html_writer::span($message->date);
-                $messagecontent .= html_writer::end_span();
-
-                $messageurl = new moodle_url('/message/index.php', array('user1' => $USER->id, 'user2' => $message->from->id));
-                $messagemenu->add($messagecontent, $messageurl, $message->state);
             }
-        }
         
         //KRB HERE
         
@@ -643,7 +642,7 @@ public function settings_tree(settings_navigation $navigation) {
             if ($level == 1) {
                 $content .= '<b class="caret"></b>';
             }
-            $content .= '</a>';
+            $content .= '</a></li>';
             $content .= '<ul class="dropdown-menu">';
             foreach ($menunode->get_children() as $menunode) {
                 $content .= $this->render_custom_menu_item($menunode, 0);
@@ -658,6 +657,7 @@ public function settings_tree(settings_navigation $navigation) {
                 $url = '#';
             }
             $content .= html_writer::link($url, $menunode->get_text(), array('title' => $menunode->get_title()));
+            $content.= '</li>';
         }
         return $content;
     }
